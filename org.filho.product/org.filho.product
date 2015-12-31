@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Produto" uid="prod" id="org.filho.productplugin.produto" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="false" includeLaunchers="true">
+<product name="Produto" uid="org.filho.product" id="org.filho.product.plugin.product" application="org.filho.product.plugin.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
 
    <configIni use="default">
    </configIni>
@@ -11,6 +12,9 @@
       </vmArgsMac>
    </launcherArgs>
 
+   <windowImages/>
+
+
    <launcher name="produto">
       <solaris/>
       <win useIco="false">
@@ -18,11 +22,24 @@
       </win>
    </launcher>
 
+
    <vm>
    </vm>
+
 
    <plugins>
    </plugins>
 
+   <features>
+      <feature id="org.filho.product.feature" version="1.0.0.qualifier"/>
+   </features>
+
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>
