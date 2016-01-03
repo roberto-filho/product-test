@@ -5,11 +5,23 @@
   <groupId>org.filho.product</groupId>
   <artifactId>product-test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <packaging>pom</packaging>
+  
+  <repositories>
+    <repository>
+      <id>eclipse-mars</id>
+      <url>http://download.eclipse.org/releases/mars</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+  
   <modules>
     <module>org.filho.product.feature</module>
     <module>org.filho.product.plugin</module>
+    <module>org.filho.product</module>
   </modules>
+  
   <build>
     <plugins>
       <plugin>
