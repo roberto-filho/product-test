@@ -11,6 +11,7 @@
   <properties>
     <tycho-version>0.24.0</tycho-version>
     <kuali-s3-wagon-version>1.2.1</kuali-s3-wagon-version>
+    <hostname>mvn-repo.gtechs.xyz</hostname>
   </properties>
 
   <repositories>
@@ -26,8 +27,9 @@
     <module>org.filho.product.plugin</module>
     <module>org.filho.product</module>
   </modules>
-
+  
   <build>
+  
     <plugins>
 
       <plugin>
