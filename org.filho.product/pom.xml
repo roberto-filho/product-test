@@ -18,14 +18,19 @@
 	<!-- Servidor de deploy -->
   <distributionManagement>
     <snapshotRepository>
-      <id>mvn-repo.gtechs.xyz</id>
-      <url>s3://mvn-repo.gtechs.xyz/snapshot</url>
+      <id>gtechs.xyz</id>
+      <url>s3://gtechs.xyz/update-sites/product-test/snapshot</url>
     </snapshotRepository>
     <repository>
-      <id>mvn-repo.gtechs.xyz</id>
-      <url>s3://mvn-repo.gtechs.xyz/release</url>
+      <id>gtechs.xyz</id>
+      <url>s3://gtechs.xyz/update-sites/product-test/release</url>
     </repository>
   </distributionManagement>
+
+  <properties>
+    <kuali-s3-wagon-version>1.2.1</kuali-s3-wagon-version>
+    <hostname>gtechs.xyz</hostname>
+  </properties>
 
   <build>
 
@@ -85,23 +90,10 @@
         <configuration>
           <fromDir>${project.build.directory}/repository</fromDir>
           <includes>**/*</includes>
-          <url>${project.build.finalName}/test</url>
-          <targetId>${project.build.finalName}</targetId>
+          <url>${project.build.finalName}/update-sites/product-test</url>
           <serverId>${project.build.finalName}</serverId>
         </configuration>
       </plugin>
-
-      <!-- <plugin>
-        <groupId>com.bazaarvoice.maven.plugins</groupId>
-        <artifactId>s3-upload-maven-plugin</artifactId>
-        <version>1.3</version>
-        <configuration>
-          <bucketName>mvn-repo.gtechs.xyz</bucketName>
-          <source>target/repostory</source>
-          <destination>test</destination>
-          <recursive>true</recursive>
-        </configuration>
-      </plugin> -->
 
     </plugins>
 
