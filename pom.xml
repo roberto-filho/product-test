@@ -23,13 +23,13 @@
   </repositories>
 
   <modules>
+    <module>org.filho.product</module>
     <module>org.filho.product.feature</module>
     <module>org.filho.product.plugin</module>
-    <module>org.filho.product</module>
   </modules>
-  
+
   <build>
-  
+
     <plugins>
 
       <plugin>

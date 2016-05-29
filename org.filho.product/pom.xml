@@ -18,18 +18,18 @@
 	<!-- Servidor de deploy -->
   <distributionManagement>
     <snapshotRepository>
-      <id>gtechs.xyz</id>
-      <url>s3://gtechs.xyz/update-sites/product-test/snapshot</url>
+      <id>gtech.site</id>
+      <url>s3://updates.gtech.site/update-sites/product-test/snapshot</url>
     </snapshotRepository>
     <repository>
-      <id>gtechs.xyz</id>
-      <url>s3://gtechs.xyz/update-sites/product-test/release</url>
+      <id>gtech.site</id>
+      <url>s3://updates.gtech.site/update-sites/product-test/release</url>
     </repository>
   </distributionManagement>
 
   <properties>
     <kuali-s3-wagon-version>1.2.1</kuali-s3-wagon-version>
-    <hostname>gtechs.xyz</hostname>
+    <hostname>gtech.site</hostname>
   </properties>
 
   <build>
@@ -37,7 +37,7 @@
     <finalName>${hostname}</finalName>
 
     <extensions>
-  
+
       <extension>
         <!-- <groupId>org.cyclopsgroup</groupId>
         <artifactId>awss3-maven-wagon</artifactId> -->
@@ -45,9 +45,9 @@
         <artifactId>maven-s3-wagon</artifactId>
         <version>1.2.1</version>
       </extension>
-  
+
     </extensions>
-    
+
     <plugins>
 
       <plugin>
@@ -55,7 +55,7 @@
         <artifactId>tycho-p2-repository-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <!-- Para incluir todos os plugins que formam esse produto, para 
+          <!-- Para incluir todos os plugins que formam esse produto, para
             não precisar buscar em outros repositórios. -->
           <includeAllDependencies>true</includeAllDependencies>
           <createArtifactRepository>true</createArtifactRepository>
