@@ -29,6 +29,28 @@
   </modules>
 
   <build>
+    <pluginManagement>
+      <!-- Skip both the default install and deploy phases -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>default-install</id>
+              <phase>none</phase>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
 
     <plugins>
 
@@ -50,13 +72,22 @@
               <ws>win32</ws>
               <arch>x86</arch>
             </environment>
-            <!--
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
             <environment>
               <os>linux</os>
               <ws>gtk</ws>
               <arch>x86_64</arch>
             </environment>
             <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86</arch>
+            </environment>
+            <!-- <environment>
               <os>macosx</os>
               <ws>cocoa</ws>
               <arch>x86_64</arch>

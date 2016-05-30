@@ -18,18 +18,18 @@
 	<!-- Servidor de deploy -->
   <distributionManagement>
     <snapshotRepository>
-      <id>gtech.site</id>
+      <id>updates.gtech.site</id>
       <url>s3://updates.gtech.site/update-sites/product-test/snapshot</url>
     </snapshotRepository>
     <repository>
-      <id>gtech.site</id>
+      <id>updates.gtech.site</id>
       <url>s3://updates.gtech.site/update-sites/product-test/release</url>
     </repository>
   </distributionManagement>
 
   <properties>
     <kuali-s3-wagon-version>1.2.1</kuali-s3-wagon-version>
-    <hostname>gtech.site</hostname>
+    <hostname>updates.gtech.site</hostname>
   </properties>
 
   <build>
@@ -80,19 +80,21 @@
         <version>1.0.3</version>
         <executions>
           <execution>
-            <id>verify</id>
-            <phase>verify</phase>
+            <id>deploy</id>
+            <phase>deploy</phase>
             <goals>
               <goal>upload</goal>
             </goals>
           </execution>
         </executions>
+
         <configuration>
           <fromDir>${project.build.directory}/repository</fromDir>
           <includes>**/*</includes>
-          <url>${project.build.finalName}/update-sites/product-test</url>
+          <url>${project.build.finalName}/product-test</url>
           <serverId>${project.build.finalName}</serverId>
         </configuration>
+
       </plugin>
 
     </plugins>
